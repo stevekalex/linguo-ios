@@ -68,7 +68,9 @@ struct LoginView: View {
                 
                 Spacer()
                 
-                NavigationLink {} label: {
+                NavigationLink {
+                    RegistrationView()
+                } label: {
                     HStack(spacing: 2) {
                         Text("Don't have an account?")
                             .foregroundColor(.black)
