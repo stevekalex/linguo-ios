@@ -20,7 +20,6 @@ struct InputView: View {
             } else {
                 TextField(placeholder, text: $text)
                     .font(.custom("Avenir", size: 14))
-
             }
             
             Divider()

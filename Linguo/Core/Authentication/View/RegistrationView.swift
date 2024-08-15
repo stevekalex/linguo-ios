@@ -11,6 +11,7 @@ struct RegistrationView: View {
     @State private var fullname = ""
     @State private var password = ""
     @State private var confirmPassword = ""
+    @EnvironmentObject var viewModel: AuthViewModel
         
     var body: some View {
         VStack {
@@ -57,15 +58,25 @@ struct RegistrationView: View {
             }
             .padding([.leading, .trailing], 80)
             
-            Button (action: {}) {
-                Text("SIGN UP")
-                    .font(.custom("Avenir Next Bold", size: 18))
-                    .fontWeight(.semibold)
-                    .frame(width: UIScreen.main.bounds.width - 172, height: 48)
-                    .foregroundColor(.white)
-                    .background(LinearGradient(gradient: Gradient(colors: [.teal, .blue]), startPoint: .leading, endPoint: .trailing))
-                    .cornerRadius(40)
-                    .padding(.top, 30)
+            Button {
+                Task {
+                    try await viewModel.createUser(
+                        withEmail: email,
+                        password: password,
+                        fullname: fullname
+                    )
+                }
+            } label: {
+                HStack {
+                    Text("SIGN UP")
+                        .font(.custom("Avenir Next Bold", size: 18))
+                        .fontWeight(.semibold)
+                        .frame(width: UIScreen.main.bounds.width - 172, height: 48)
+                        .foregroundColor(.white)
+                        .background(LinearGradient(gradient: Gradient(colors: [.teal, .blue]), startPoint: .leading, endPoint: .trailing))
+                        .cornerRadius(40)
+                        .padding(.top, 30)
+                }
             }
         }
     }

@@ -4,15 +4,27 @@
 //
 //  Created by Steve Alex on 12/08/2024.
 //
-//
-//import SwiftUI
-//import SwiftData
-//
-//struct ContentView: View {
-//    var body: some View {
-//}
-//
-//#Preview {
-//    ContentView()
-//        
-//}
+
+import SwiftUI
+import SwiftData
+import Firebase
+
+struct ContentView: View {
+    @EnvironmentObject var viewModel: AuthViewModel
+
+    var body: some View {
+        Group {
+            if viewModel.userSession != nil {
+                ProfileView()
+            } else {
+                LoginView()
+            }
+        }
+    }
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        LoginView()
+    }
+}

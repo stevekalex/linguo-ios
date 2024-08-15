@@ -9,6 +9,7 @@ import SwiftUI
 struct LoginView: View {
     @State private var email = ""
     @State private var password = ""
+    @EnvironmentObject var viewModel: AuthViewModel
     
     var body: some View {
         NavigationStack {
@@ -25,7 +26,7 @@ struct LoginView: View {
                             .frame(width: 100, height: 100)
                             .padding(.bottom, -27)
                         
-                            
+                        
                     })
                     .padding(.top, 100)
                     
@@ -35,7 +36,6 @@ struct LoginView: View {
                         .foregroundColor(Color(.systemBlue))
                 }
 
-                
                 VStack(spacing: 18) {
                     InputView(text: $email,
                               title: "Email Address",
@@ -48,16 +48,26 @@ struct LoginView: View {
                 }
                 .padding([.leading, .trailing], 80)
                 
-                Button (action: {}) {
-                    Text("SIGN IN")
-                        .font(.custom("Avenir Next Bold", size: 18))
-                        .fontWeight(.semibold)
-                        .frame(width: UIScreen.main.bounds.width - 172, height: 48)
-                        .foregroundColor(.white)
-                        .background(LinearGradient(gradient: Gradient(colors: [.teal, .blue]), startPoint: .leading, endPoint: .trailing))
-                        .cornerRadius(40)
-                        .padding(.top, 30)
+                Button {
+                    Task {
+                        try await viewModel.signIn(
+                            withEmail: email,
+                            password: password
+                        )
+                    }
+                } label: {
+                    HStack {
+                        Text("SIGN IN")
+                            .font(.custom("Avenir Next Bold", size: 18))
+                            .fontWeight(.semibold)
+                            .frame(width: UIScreen.main.bounds.width - 172, height: 48)
+                            .foregroundColor(.white)
+                            .background(LinearGradient(gradient: Gradient(colors: [.teal, .blue]), startPoint: .leading, endPoint: .trailing))
+                            .cornerRadius(40)
+                            .padding(.top, 30)
+                    }
                 }
+
                 NavigationLink {} label: {
                     Text("Forgot password")
                         .foregroundColor(.black)
@@ -86,11 +96,5 @@ struct LoginView: View {
             }
         }
     }
-    
 }
 
-struct LoginView_Previews: PreviewProvider {
-    static var previews: some View {
-        LoginView()
-    }
-}
