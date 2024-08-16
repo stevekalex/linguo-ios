@@ -12,6 +12,7 @@ import FirebaseCore
 @main
 struct LinguoApp: App {
     @StateObject var viewModel = AuthViewModel()
+
     
     init() {
         FirebaseApp.configure()

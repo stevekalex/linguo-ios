@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F7183802C6DE5C000D67A5D /* DeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F71837F2C6DE5C000D67A5D /* DeckView.swift */; };
+		5F7183822C6E12DD00D67A5D /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7183812C6E12DD00D67A5D /* Deck.swift */; };
+		5F7183852C6E23BF00D67A5D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7183842C6E23BF00D67A5D /* Extensions.swift */; };
+		5F71838B2C6E34FC00D67A5D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5F71838A2C6E34FC00D67A5D /* GoogleService-Info.plist */; };
+		5FC9FA402C6E41A800B1879D /* CreateDeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC9FA3F2C6E41A800B1879D /* CreateDeckView.swift */; };
+		5FC9FA462C6F3F6700B1879D /* DeckDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC9FA452C6F3F6700B1879D /* DeckDetailView.swift */; };
 		5FCEDB232C6A6345004721E8 /* LinguoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCEDB222C6A6345004721E8 /* LinguoApp.swift */; };
 		5FCEDB252C6A6345004721E8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCEDB242C6A6345004721E8 /* ContentView.swift */; };
 		5FCEDB292C6A6346004721E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FCEDB282C6A6346004721E8 /* Assets.xcassets */; };
@@ -21,7 +27,6 @@
 		5FCEDB9E2C6BA46B004721E8 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCEDB9D2C6BA46B004721E8 /* ProfileView.swift */; };
 		5FCEDBA42C6BA81D004721E8 /* SettingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCEDBA32C6BA81D004721E8 /* SettingsRowView.swift */; };
 		5FCEDBA62C6BAB73004721E8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCEDBA52C6BAB73004721E8 /* User.swift */; };
-		5FCEDBA82C6BB7D4004721E8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5FCEDBA72C6BB7D4004721E8 /* GoogleService-Info.plist */; };
 		5FCEDBAB2C6BBA0F004721E8 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 5FCEDBAA2C6BBA0F004721E8 /* FirebaseAuth */; };
 		5FCEDBAD2C6BBA0F004721E8 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 5FCEDBAC2C6BBA0F004721E8 /* FirebaseFirestore */; };
 		5FCEDBB12C6C9D39004721E8 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCEDBB02C6C9D39004721E8 /* AuthViewModel.swift */; };
@@ -45,6 +50,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5F71837F2C6DE5C000D67A5D /* DeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckView.swift; sourceTree = "<group>"; };
+		5F7183812C6E12DD00D67A5D /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
+		5F7183842C6E23BF00D67A5D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		5F71838A2C6E34FC00D67A5D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5FC9FA3F2C6E41A800B1879D /* CreateDeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDeckView.swift; sourceTree = "<group>"; };
+		5FC9FA452C6F3F6700B1879D /* DeckDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckDetailView.swift; sourceTree = "<group>"; };
 		5FCEDB1F2C6A6345004721E8 /* Linguo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Linguo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FCEDB222C6A6345004721E8 /* LinguoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinguoApp.swift; sourceTree = "<group>"; };
 		5FCEDB242C6A6345004721E8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -63,7 +74,6 @@
 		5FCEDB9D2C6BA46B004721E8 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		5FCEDBA32C6BA81D004721E8 /* SettingsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
 		5FCEDBA52C6BAB73004721E8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		5FCEDBA72C6BB7D4004721E8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5FCEDBB02C6C9D39004721E8 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -94,6 +104,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F7183832C6E23B200D67A5D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				5F7183842C6E23BF00D67A5D /* Extensions.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		5FCEDB162C6A6345004721E8 = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +135,7 @@
 		5FCEDB212C6A6345004721E8 /* Linguo */ = {
 			isa = PBXGroup;
 			children = (
+				5F7183832C6E23B200D67A5D /* Helpers */,
 				5FCEDB8F2C6A64C1004721E8 /* Core */,
 				5FCEDB8B2C6A6495004721E8 /* App */,
 				5FCEDB8E2C6A64AB004721E8 /* Model */,
@@ -124,7 +143,7 @@
 				5FCEDB972C6A66CD004721E8 /* app-icon.png */,
 				5FCEDB282C6A6346004721E8 /* Assets.xcassets */,
 				5FCEDB2A2C6A6346004721E8 /* Linguo.entitlements */,
-				5FCEDBA72C6BB7D4004721E8 /* GoogleService-Info.plist */,
+				5F71838A2C6E34FC00D67A5D /* GoogleService-Info.plist */,
 				5FCEDB2B2C6A6346004721E8 /* Preview Content */,
 			);
 			path = Linguo;
@@ -168,6 +187,8 @@
 			children = (
 				5FCEDB992C6B7BDA004721E8 /* InputView.swift */,
 				5FCEDBA32C6BA81D004721E8 /* SettingsRowView.swift */,
+				5FC9FA3F2C6E41A800B1879D /* CreateDeckView.swift */,
+				5FC9FA452C6F3F6700B1879D /* DeckDetailView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -176,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				5FCEDBA52C6BAB73004721E8 /* User.swift */,
+				5F7183812C6E12DD00D67A5D /* Deck.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -220,6 +242,7 @@
 			children = (
 				5FCEDB952C6A65B8004721E8 /* LoginView.swift */,
 				5FCEDB9B2C6B930B004721E8 /* RegistrationView.swift */,
+				5F71837F2C6DE5C000D67A5D /* DeckView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -344,8 +367,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5FCEDB2D2C6A6346004721E8 /* Preview Assets.xcassets in Resources */,
+				5F71838B2C6E34FC00D67A5D /* GoogleService-Info.plist in Resources */,
 				5FCEDB292C6A6346004721E8 /* Assets.xcassets in Resources */,
-				5FCEDBA82C6BB7D4004721E8 /* GoogleService-Info.plist in Resources */,
 				5FCEDB982C6A66CD004721E8 /* app-icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -376,10 +399,15 @@
 				5FCEDB252C6A6345004721E8 /* ContentView.swift in Sources */,
 				5FCEDB232C6A6345004721E8 /* LinguoApp.swift in Sources */,
 				5FCEDBA62C6BAB73004721E8 /* User.swift in Sources */,
+				5F7183802C6DE5C000D67A5D /* DeckView.swift in Sources */,
 				5FCEDB9E2C6BA46B004721E8 /* ProfileView.swift in Sources */,
+				5F7183852C6E23BF00D67A5D /* Extensions.swift in Sources */,
 				5FCEDB9C2C6B930B004721E8 /* RegistrationView.swift in Sources */,
+				5FC9FA462C6F3F6700B1879D /* DeckDetailView.swift in Sources */,
 				5FCEDBA42C6BA81D004721E8 /* SettingsRowView.swift in Sources */,
+				5F7183822C6E12DD00D67A5D /* Deck.swift in Sources */,
 				5FCEDBB12C6C9D39004721E8 /* AuthViewModel.swift in Sources */,
+				5FC9FA402C6E41A800B1879D /* CreateDeckView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -560,7 +588,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = project.Linguo;
+				PRODUCT_BUNDLE_IDENTIFIER = "linguo-language";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -601,7 +629,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = project.Linguo;
+				PRODUCT_BUNDLE_IDENTIFIER = "linguo-language";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

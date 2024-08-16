@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct DeckView: View {
+struct DeckListView: View {
     @StateObject private var deckService = DeckService()
     @State private var showPopup: Bool = false
 
@@ -17,16 +17,19 @@ struct DeckView: View {
             VStack {
                 List {
                     ForEach(deckService.decks) { deck in
-                        HStack () {
-                            Text(deck.name)
-                            Spacer()
-                            Text(String(deck.reviewedToday))
-                                .foregroundStyle(.green)
-                                .font(.custom("Avenir Next Bold", size: 16))
-                            
-                            Text(String(deck.reviewCardsRemaining))
-                                .foregroundStyle(.red)
-                                .font(.custom("Avenir Next Bold", size: 16))
+                        NavigationLink(destination: DeckDetailView(deck: deck))
+                        {
+                            HStack () {
+                                Text(deck.name)
+                                Spacer()
+                                Text(String(deck.reviewedToday))
+                                    .foregroundStyle(.green)
+                                    .font(.custom("Avenir Next Bold", size: 16))
+                                
+                                Text(String(deck.reviewCardsRemaining))
+                                    .foregroundStyle(.red)
+                                    .font(.custom("Avenir Next Bold", size: 16))
+                            }
                         }
                     }
                 }
@@ -54,9 +57,9 @@ struct DeckView: View {
     }
 }
 
-struct DeckView_Previews: PreviewProvider {
+struct DeckListView_Previews: PreviewProvider {
     static var previews: some View {
-        DeckView()
+        DeckListView()
             .environmentObject(DeckService())
     }
 }
