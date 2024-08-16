@@ -55,8 +55,15 @@ struct CreateDeckView: View {
                 }
             }
         }
+        .navigationBarItems(leading: Button(action: {
+            showPopup = false
+        } ) {
+            Image(systemName: "chevron.backward")
+            Text("Back")
+        } )
         .navigationTitle("Create Deck")
         .navigationBarTitleDisplayMode(.inline)
+
     }
 }
 

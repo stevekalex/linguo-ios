@@ -20,10 +20,13 @@ struct DeckDetailView: View {
     var deck: IDeck
 
     var body: some View {
-        Text("Name: \(deck.name)")
-        Text("Language: \(deck.language)")
-        Text("Reviewed Today: \(deck.reviewedToday)")
-        Text("Review Cards Remaining: \(deck.reviewCardsRemaining)")
+        VStack {
+            Text("Name: \(deck.name)")
+            Text("Language: \(deck.language)")
+            Text("Reviewed Today: \(deck.reviewedToday)")
+            Text("Review Cards Remaining: \(deck.reviewCardsRemaining)")
+        }
+        
     }
 }
 

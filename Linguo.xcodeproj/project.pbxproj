@@ -10,9 +10,9 @@
 		5F7183802C6DE5C000D67A5D /* DeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F71837F2C6DE5C000D67A5D /* DeckView.swift */; };
 		5F7183822C6E12DD00D67A5D /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7183812C6E12DD00D67A5D /* Deck.swift */; };
 		5F7183852C6E23BF00D67A5D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7183842C6E23BF00D67A5D /* Extensions.swift */; };
-		5F71838B2C6E34FC00D67A5D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5F71838A2C6E34FC00D67A5D /* GoogleService-Info.plist */; };
 		5FC9FA402C6E41A800B1879D /* CreateDeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC9FA3F2C6E41A800B1879D /* CreateDeckView.swift */; };
 		5FC9FA462C6F3F6700B1879D /* DeckDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC9FA452C6F3F6700B1879D /* DeckDetailView.swift */; };
+		5FC9FA4A2C6F48EE00B1879D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5FC9FA492C6F48EE00B1879D /* GoogleService-Info.plist */; };
 		5FCEDB232C6A6345004721E8 /* LinguoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCEDB222C6A6345004721E8 /* LinguoApp.swift */; };
 		5FCEDB252C6A6345004721E8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCEDB242C6A6345004721E8 /* ContentView.swift */; };
 		5FCEDB292C6A6346004721E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FCEDB282C6A6346004721E8 /* Assets.xcassets */; };
@@ -53,9 +53,9 @@
 		5F71837F2C6DE5C000D67A5D /* DeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckView.swift; sourceTree = "<group>"; };
 		5F7183812C6E12DD00D67A5D /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 		5F7183842C6E23BF00D67A5D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		5F71838A2C6E34FC00D67A5D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5FC9FA3F2C6E41A800B1879D /* CreateDeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDeckView.swift; sourceTree = "<group>"; };
 		5FC9FA452C6F3F6700B1879D /* DeckDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckDetailView.swift; sourceTree = "<group>"; };
+		5FC9FA492C6F48EE00B1879D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5FCEDB1F2C6A6345004721E8 /* Linguo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Linguo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FCEDB222C6A6345004721E8 /* LinguoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinguoApp.swift; sourceTree = "<group>"; };
 		5FCEDB242C6A6345004721E8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -143,7 +143,7 @@
 				5FCEDB972C6A66CD004721E8 /* app-icon.png */,
 				5FCEDB282C6A6346004721E8 /* Assets.xcassets */,
 				5FCEDB2A2C6A6346004721E8 /* Linguo.entitlements */,
-				5F71838A2C6E34FC00D67A5D /* GoogleService-Info.plist */,
+				5FC9FA492C6F48EE00B1879D /* GoogleService-Info.plist */,
 				5FCEDB2B2C6A6346004721E8 /* Preview Content */,
 			);
 			path = Linguo;
@@ -367,7 +367,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5FCEDB2D2C6A6346004721E8 /* Preview Assets.xcassets in Resources */,
-				5F71838B2C6E34FC00D67A5D /* GoogleService-Info.plist in Resources */,
+				5FC9FA4A2C6F48EE00B1879D /* GoogleService-Info.plist in Resources */,
 				5FCEDB292C6A6346004721E8 /* Assets.xcassets in Resources */,
 				5FCEDB982C6A66CD004721E8 /* app-icon.png in Resources */,
 			);
