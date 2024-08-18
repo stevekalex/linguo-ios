@@ -16,6 +16,6 @@ struct ReviewFlashcardView: View {
 
 struct ReviewFlashcardView_Previews: PreviewProvider {
     static var previews: some View {
-        CreateFlashcardView()
+        ReviewFlashcardView()
     }
 }

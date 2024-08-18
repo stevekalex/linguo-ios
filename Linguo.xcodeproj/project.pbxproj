@@ -15,6 +15,7 @@
 		5FC9FA4A2C6F48EE00B1879D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5FC9FA492C6F48EE00B1879D /* GoogleService-Info.plist */; };
 		5FC9FA4C2C6F5DDA00B1879D /* CreateFlashcardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC9FA4B2C6F5DDA00B1879D /* CreateFlashcardView.swift */; };
 		5FC9FA4E2C6F5EFC00B1879D /* ReviewFlashcardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC9FA4D2C6F5EFC00B1879D /* ReviewFlashcardView.swift */; };
+		5FC9FA572C71ACAF00B1879D /* info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5FC9FA562C71ACAF00B1879D /* info.plist */; };
 		5FCEDB232C6A6345004721E8 /* LinguoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCEDB222C6A6345004721E8 /* LinguoApp.swift */; };
 		5FCEDB252C6A6345004721E8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCEDB242C6A6345004721E8 /* ContentView.swift */; };
 		5FCEDB292C6A6346004721E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FCEDB282C6A6346004721E8 /* Assets.xcassets */; };
@@ -60,6 +61,7 @@
 		5FC9FA492C6F48EE00B1879D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5FC9FA4B2C6F5DDA00B1879D /* CreateFlashcardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFlashcardView.swift; sourceTree = "<group>"; };
 		5FC9FA4D2C6F5EFC00B1879D /* ReviewFlashcardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewFlashcardView.swift; sourceTree = "<group>"; };
+		5FC9FA562C71ACAF00B1879D /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
 		5FCEDB1F2C6A6345004721E8 /* Linguo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Linguo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FCEDB222C6A6345004721E8 /* LinguoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinguoApp.swift; sourceTree = "<group>"; };
 		5FCEDB242C6A6345004721E8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 		5FCEDB162C6A6345004721E8 = {
 			isa = PBXGroup;
 			children = (
+				5FC9FA562C71ACAF00B1879D /* info.plist */,
 				5FCEDB212C6A6345004721E8 /* Linguo */,
 				5FCEDB352C6A6346004721E8 /* LinguoTests */,
 				5FCEDB3F2C6A6346004721E8 /* LinguoUITests */,
@@ -328,6 +331,9 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
+				KnownAssetTags = (
+					New,
+				);
 				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
@@ -372,6 +378,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FC9FA572C71ACAF00B1879D /* info.plist in Resources */,
 				5FCEDB2D2C6A6346004721E8 /* Preview Assets.xcassets in Resources */,
 				5FC9FA4A2C6F48EE00B1879D /* GoogleService-Info.plist in Resources */,
 				5FCEDB292C6A6346004721E8 /* Assets.xcassets in Resources */,
@@ -579,8 +586,10 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Linguo/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = linguo;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app uses the camera to create flashcard images";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -620,8 +629,10 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Linguo/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = linguo;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app uses the camera to create flashcard images";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
