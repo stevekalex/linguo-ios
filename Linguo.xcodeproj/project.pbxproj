@@ -33,6 +33,7 @@
 		5FCEDBAB2C6BBA0F004721E8 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 5FCEDBAA2C6BBA0F004721E8 /* FirebaseAuth */; };
 		5FCEDBAD2C6BBA0F004721E8 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 5FCEDBAC2C6BBA0F004721E8 /* FirebaseFirestore */; };
 		5FCEDBB12C6C9D39004721E8 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCEDBB02C6C9D39004721E8 /* AuthViewModel.swift */; };
+		5FF81D382C739EB100681DC2 /* ImagePreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF81D372C739EB100681DC2 /* ImagePreviewView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		5FCEDBA32C6BA81D004721E8 /* SettingsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
 		5FCEDBA52C6BAB73004721E8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5FCEDBB02C6C9D39004721E8 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		5FF81D372C739EB100681DC2 /* ImagePreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePreviewView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +199,7 @@
 				5FC9FA452C6F3F6700B1879D /* DeckDetailView.swift */,
 				5FC9FA4B2C6F5DDA00B1879D /* CreateFlashcardView.swift */,
 				5FC9FA4D2C6F5EFC00B1879D /* ReviewFlashcardView.swift */,
+				5FF81D372C739EB100681DC2 /* ImagePreviewView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -408,6 +411,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5FCEDB962C6A65B8004721E8 /* LoginView.swift in Sources */,
+				5FF81D382C739EB100681DC2 /* ImagePreviewView.swift in Sources */,
 				5FCEDB9A2C6B7BDA004721E8 /* InputView.swift in Sources */,
 				5FCEDB252C6A6345004721E8 /* ContentView.swift in Sources */,
 				5FCEDB232C6A6345004721E8 /* LinguoApp.swift in Sources */,
