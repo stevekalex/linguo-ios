@@ -17,7 +17,6 @@ import Foundation
 import SwiftUI
 
 struct DeckDetailView: View {
-    @State private var viewModel = ViewModel()
     var deck: IDeck
 
     var body: some View {
@@ -34,7 +33,7 @@ struct DeckDetailView: View {
             }
             
             HStack {
-                NavigationLink(destination: CameraView(image: $viewModel.currentFrame))
+                NavigationLink(destination: CameraView())
                 {
                     Text("Create ➕")
                         .font(.custom("Avenir Next Bold", size: 18))
