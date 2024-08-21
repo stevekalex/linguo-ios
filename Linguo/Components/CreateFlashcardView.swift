@@ -18,9 +18,14 @@ struct CustomCameraView: MCameraView {
 private extension CustomCameraView {
 
     func createCaptureButton() -> some View {
-        Button(action: captureOutput) { Text("Click to capture") }
-            .padding(.top, 12)
-            .padding(.bottom, 12)
+        
+        Button(action: captureOutput) {
+            Circle()
+                .stroke(Color.white, lineWidth: 5)
+                .frame(width: 75, height: 75)
+                .padding(.top)
+        }
+        .padding()
     }
 }
 
@@ -72,6 +77,7 @@ private extension CustomCameraPreview {
 }
 
 struct CameraView: View {
+    @State var currentDeckId: String
     @State private var showCamera = true
     @State private var image: UIImage = UIImage()
 
@@ -93,8 +99,8 @@ struct CameraView: View {
                 .mediaPreviewScreen(CustomCameraPreview.init)
                 .onImageCaptured { data in
                     image = data
-                    print(data)
                     showCamera = false
+                    print("IMAGE HAS BEEN CAPTURED")
                 }
                 .afterMediaCaptured { $0
                     .closeCameraController(true)
@@ -104,7 +110,7 @@ struct CameraView: View {
                     print("CLOSE THE CONTROLLER")
                 }
         } else {
-            ImagePreviewView(uiImage: image)
+            ImagePreviewView(currentDeckId: currentDeckId, uiImage: image)
         }
     }
 
