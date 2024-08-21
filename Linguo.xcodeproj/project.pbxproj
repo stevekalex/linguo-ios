@@ -13,6 +13,9 @@
 		5FC9FA402C6E41A800B1879D /* CreateDeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC9FA3F2C6E41A800B1879D /* CreateDeckView.swift */; };
 		5FC9FA462C6F3F6700B1879D /* DeckDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC9FA452C6F3F6700B1879D /* DeckDetailView.swift */; };
 		5FC9FA4A2C6F48EE00B1879D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5FC9FA492C6F48EE00B1879D /* GoogleService-Info.plist */; };
+		5FC9FA4C2C6F5DDA00B1879D /* CreateFlashcardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC9FA4B2C6F5DDA00B1879D /* CreateFlashcardView.swift */; };
+		5FC9FA4E2C6F5EFC00B1879D /* ReviewFlashcardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC9FA4D2C6F5EFC00B1879D /* ReviewFlashcardView.swift */; };
+		5FC9FA5A2C71C9AC00B1879D /* MijickCameraView in Frameworks */ = {isa = PBXBuildFile; productRef = 5FC9FA592C71C9AC00B1879D /* MijickCameraView */; };
 		5FCEDB232C6A6345004721E8 /* LinguoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCEDB222C6A6345004721E8 /* LinguoApp.swift */; };
 		5FCEDB252C6A6345004721E8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCEDB242C6A6345004721E8 /* ContentView.swift */; };
 		5FCEDB292C6A6346004721E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FCEDB282C6A6346004721E8 /* Assets.xcassets */; };
@@ -30,6 +33,9 @@
 		5FCEDBAB2C6BBA0F004721E8 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 5FCEDBAA2C6BBA0F004721E8 /* FirebaseAuth */; };
 		5FCEDBAD2C6BBA0F004721E8 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 5FCEDBAC2C6BBA0F004721E8 /* FirebaseFirestore */; };
 		5FCEDBB12C6C9D39004721E8 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCEDBB02C6C9D39004721E8 /* AuthViewModel.swift */; };
+		5FF81D382C739EB100681DC2 /* ImagePreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF81D372C739EB100681DC2 /* ImagePreviewView.swift */; };
+		5FF81D3A2C74811900681DC2 /* Flashcard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF81D392C74811900681DC2 /* Flashcard.swift */; };
+		5FFD6F452C74886B00413985 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 5FFD6F442C74886B00413985 /* FirebaseStorage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +62,8 @@
 		5FC9FA3F2C6E41A800B1879D /* CreateDeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDeckView.swift; sourceTree = "<group>"; };
 		5FC9FA452C6F3F6700B1879D /* DeckDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckDetailView.swift; sourceTree = "<group>"; };
 		5FC9FA492C6F48EE00B1879D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5FC9FA4B2C6F5DDA00B1879D /* CreateFlashcardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFlashcardView.swift; sourceTree = "<group>"; };
+		5FC9FA4D2C6F5EFC00B1879D /* ReviewFlashcardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewFlashcardView.swift; sourceTree = "<group>"; };
 		5FCEDB1F2C6A6345004721E8 /* Linguo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Linguo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FCEDB222C6A6345004721E8 /* LinguoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinguoApp.swift; sourceTree = "<group>"; };
 		5FCEDB242C6A6345004721E8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -75,6 +83,8 @@
 		5FCEDBA32C6BA81D004721E8 /* SettingsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
 		5FCEDBA52C6BAB73004721E8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5FCEDBB02C6C9D39004721E8 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		5FF81D372C739EB100681DC2 /* ImagePreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePreviewView.swift; sourceTree = "<group>"; };
+		5FF81D392C74811900681DC2 /* Flashcard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flashcard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +92,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FC9FA5A2C71C9AC00B1879D /* MijickCameraView in Frameworks */,
+				5FFD6F452C74886B00413985 /* FirebaseStorage in Frameworks */,
 				5FCEDBAB2C6BBA0F004721E8 /* FirebaseAuth in Frameworks */,
 				5FCEDBAD2C6BBA0F004721E8 /* FirebaseFirestore in Frameworks */,
 			);
@@ -119,6 +131,7 @@
 				5FCEDB352C6A6346004721E8 /* LinguoTests */,
 				5FCEDB3F2C6A6346004721E8 /* LinguoUITests */,
 				5FCEDB202C6A6345004721E8 /* Products */,
+				5FFD6F432C74886B00413985 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -185,10 +198,13 @@
 		5FCEDB8D2C6A64A5004721E8 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				5FCEDB992C6B7BDA004721E8 /* InputView.swift */,
-				5FCEDBA32C6BA81D004721E8 /* SettingsRowView.swift */,
+				5FC9FA4B2C6F5DDA00B1879D /* CreateFlashcardView.swift */,
 				5FC9FA3F2C6E41A800B1879D /* CreateDeckView.swift */,
 				5FC9FA452C6F3F6700B1879D /* DeckDetailView.swift */,
+				5FF81D372C739EB100681DC2 /* ImagePreviewView.swift */,
+				5FCEDB992C6B7BDA004721E8 /* InputView.swift */,
+				5FC9FA4D2C6F5EFC00B1879D /* ReviewFlashcardView.swift */,
+				5FCEDBA32C6BA81D004721E8 /* SettingsRowView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -198,6 +214,7 @@
 			children = (
 				5FCEDBA52C6BAB73004721E8 /* User.swift */,
 				5F7183812C6E12DD00D67A5D /* Deck.swift */,
+				5FF81D392C74811900681DC2 /* Flashcard.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -255,6 +272,13 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		5FFD6F432C74886B00413985 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -274,6 +298,8 @@
 			packageProductDependencies = (
 				5FCEDBAA2C6BBA0F004721E8 /* FirebaseAuth */,
 				5FCEDBAC2C6BBA0F004721E8 /* FirebaseFirestore */,
+				5FC9FA592C71C9AC00B1879D /* MijickCameraView */,
+				5FFD6F442C74886B00413985 /* FirebaseStorage */,
 			);
 			productName = Linguo;
 			productReference = 5FCEDB1F2C6A6345004721E8 /* Linguo.app */;
@@ -322,6 +348,9 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
+				KnownAssetTags = (
+					New,
+				);
 				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
@@ -349,6 +378,7 @@
 			mainGroup = 5FCEDB162C6A6345004721E8;
 			packageReferences = (
 				5FCEDBA92C6BB9C8004721E8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				5FC9FA582C71C9AC00B1879D /* XCRemoteSwiftPackageReference "CameraView" */,
 			);
 			productRefGroup = 5FCEDB202C6A6345004721E8 /* Products */;
 			projectDirPath = "";
@@ -395,18 +425,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				5FCEDB962C6A65B8004721E8 /* LoginView.swift in Sources */,
+				5FF81D382C739EB100681DC2 /* ImagePreviewView.swift in Sources */,
 				5FCEDB9A2C6B7BDA004721E8 /* InputView.swift in Sources */,
 				5FCEDB252C6A6345004721E8 /* ContentView.swift in Sources */,
 				5FCEDB232C6A6345004721E8 /* LinguoApp.swift in Sources */,
 				5FCEDBA62C6BAB73004721E8 /* User.swift in Sources */,
+				5FF81D3A2C74811900681DC2 /* Flashcard.swift in Sources */,
 				5F7183802C6DE5C000D67A5D /* DeckView.swift in Sources */,
 				5FCEDB9E2C6BA46B004721E8 /* ProfileView.swift in Sources */,
 				5F7183852C6E23BF00D67A5D /* Extensions.swift in Sources */,
 				5FCEDB9C2C6B930B004721E8 /* RegistrationView.swift in Sources */,
+				5FC9FA4E2C6F5EFC00B1879D /* ReviewFlashcardView.swift in Sources */,
 				5FC9FA462C6F3F6700B1879D /* DeckDetailView.swift in Sources */,
 				5FCEDBA42C6BA81D004721E8 /* SettingsRowView.swift in Sources */,
 				5F7183822C6E12DD00D67A5D /* Deck.swift in Sources */,
 				5FCEDBB12C6C9D39004721E8 /* AuthViewModel.swift in Sources */,
+				5FC9FA4C2C6F5DDA00B1879D /* CreateFlashcardView.swift in Sources */,
 				5FC9FA402C6E41A800B1879D /* CreateDeckView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -564,15 +598,19 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Linguo/Linguo.entitlements;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Linguo/Preview Content\"";
 				DEVELOPMENT_TEAM = 9D8MFBJLQP;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Linguo/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = linguo;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app uses the camera to take pictures for flashcards";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app uses the microphone to record audio for flashcards";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -590,6 +628,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "linguo-language";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -605,15 +644,19 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Linguo/Linguo.entitlements;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Linguo/Preview Content\"";
 				DEVELOPMENT_TEAM = 9D8MFBJLQP;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Linguo/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = linguo;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app uses the camera to take pictures for flashcards";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app uses the microphone to record audio for flashcards";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -631,6 +674,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "linguo-language";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -772,6 +816,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		5FC9FA582C71C9AC00B1879D /* XCRemoteSwiftPackageReference "CameraView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Mijick/CameraView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.0;
+			};
+		};
 		5FCEDBA92C6BB9C8004721E8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -783,6 +835,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		5FC9FA592C71C9AC00B1879D /* MijickCameraView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5FC9FA582C71C9AC00B1879D /* XCRemoteSwiftPackageReference "CameraView" */;
+			productName = MijickCameraView;
+		};
 		5FCEDBAA2C6BBA0F004721E8 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5FCEDBA92C6BB9C8004721E8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
@@ -792,6 +849,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5FCEDBA92C6BB9C8004721E8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;
+		};
+		5FFD6F442C74886B00413985 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5FCEDBA92C6BB9C8004721E8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
