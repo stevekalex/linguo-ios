@@ -9,31 +9,26 @@ import FirebaseAuth
 import FirebaseFirestore
 import SwiftUI
 
-struct IDeck: Identifiable, Encodable{
+struct IDeck: Identifiable {
     let id: String
     let name: String
     let language: String
     let reviewedToday: Int
     let reviewCardsRemaining: Int
+    let image: UIImage?
 }
 
 @MainActor
 class DeckService: ObservableObject {
     @EnvironmentObject var viewModel: AuthViewModel
-
     @Published private(set) var decks: [IDeck] = []
     
     init() {
         Task {
-            do {
-                let decks = await getDecks()
-                DispatchQueue.main.async {
-                    self.decks = decks
-                }
-            } catch {
-                print("Error fetching decks")
+            let decks = await getDecks()
+            DispatchQueue.main.async {
+                self.decks = decks
             }
-            
         }
     }
     
@@ -59,7 +54,8 @@ class DeckService: ObservableObject {
                     name: data["name"] as? String ?? "",
                     language: data["language"] as? String ?? "",
                     reviewedToday: data["reviewedToday"] as? Int ?? 0,
-                    reviewCardsRemaining: data["reviewCardsRemaining"] as? Int ?? 0
+                    reviewCardsRemaining: data["reviewCardsRemaining"] as? Int ?? 0,
+                    image: nil
                 ))
             }
             
@@ -71,7 +67,6 @@ class DeckService: ObservableObject {
         
         return decks
     }
-
 
     func createNewDeck(name: String, language: String, reviewedToday: Int, reviewCardRemaining: Int) async {
         print("Create new deck")
@@ -85,7 +80,7 @@ class DeckService: ObservableObject {
         
         do {
             try await Firestore.firestore().collection("decks").addDocument(data: newDeck)
-            decks.append(IDeck(id: "3", name: name, language: language, reviewedToday: reviewedToday, reviewCardsRemaining: reviewCardRemaining))
+            decks.append(IDeck(id: "3", name: name, language: language, reviewedToday: reviewedToday, reviewCardsRemaining: reviewCardRemaining, image: nil))
         } catch let error {
             print("Error adding deck: \(error)")
         }
