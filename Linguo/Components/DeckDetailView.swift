@@ -45,7 +45,7 @@ struct DeckDetailView: View {
                         .padding(.top, 30)
                 }
                 
-                NavigationLink(destination: ReviewFlashcardView())
+                NavigationLink(destination: ReviewFlashcardView(deckId: deck.id))
                 {
                     Text("Review ♻️")
                         .font(.custom("Avenir Next Bold", size: 18))
@@ -58,11 +58,5 @@ struct DeckDetailView: View {
                 }
             }
         }
-    }
-}
-
-struct DeckDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        DeckDetailView(deck: IDeck(id: "1", name: "Spanish basic vocab", language: "Spanish", reviewedToday: 10, reviewCardsRemaining: 105))
     }
 }

@@ -10,8 +10,10 @@ import FirebaseFirestore
 import FirebaseStorage
 import SwiftUI
 
-struct FlashcardData: Codable {
+struct FlashcardData: Identifiable {
+    let id: String
     let promptImageUrl: String
+    let image: UIImage
     let answer: String
     let lastReviewDate: Date
     let nextReviewDate: Date
@@ -19,9 +21,59 @@ struct FlashcardData: Codable {
 
 @MainActor
 class FlashcardService: ObservableObject {
+    func getFlashcards(deckId: String, reviewDate: Date) async throws -> [FlashcardData]  {
+        print("GET FLASHCARDS")
+        let db = Firestore.firestore()
+        let query = db.collection("flashcards").whereField("deckId", isEqualTo: deckId)
+        let querySnapshot = try await query.getDocuments()
+        
+        var flashcards: [FlashcardData] = []
+        
+        for document in querySnapshot.documents {
+            let data = document.data()
+            let image = await getImageData(imageUrl: data["promptImageUrl"] as? String ?? "")
+            flashcards.append(
+                FlashcardData(
+                    id: document.documentID,
+                    promptImageUrl: data["promptImageUrl"] as? String ?? "",
+                    image: image,
+                    answer: data["answer"] as? String ?? "",
+                    lastReviewDate: data["lastReviewDate"] as? Date ?? Date(),
+                    nextReviewDate: data["nextReviewDate"] as? Date ?? Date()
+                )
+            )
+        }
+        
+        return flashcards
+    }
+    
+    
+    func getImageData(imageUrl: String) async -> UIImage {
+        let storageRef = Storage.storage().reference(forURL: imageUrl)
+        let defaultImage: UIImage = UIImage()
+        
+        do {
+             // Fetch data asynchronously
+             let data = try await storageRef.data(maxSize: 11795930)
+             print("DATA =>")
+             print(data)
+             // Attempt to create a UIImage from the fetched data
+             if let image = UIImage(data: data) {
+                 print("GOT IMAGE")
+                 return image
+             } else {
+                 print("UNABLE TO IMAGE")
+                 return defaultImage
+             }
+         } catch {
+             // If an error occurs, return the default image
+             print("Error fetching image: \(error)")
+             return defaultImage
+         }
+    }
+    
     func createFlashcard(currentDeckId: String, prompt: UIImage, answer: String, lastReviewDate: Date, nextReviewDate: Date) async throws -> String {
-        print("Create new flashcard!")
-
+        
         let db = Firestore.firestore()
         let fileStorage = Storage.storage().reference()
         
@@ -29,18 +81,12 @@ class FlashcardService: ObservableObject {
           throw NSError(domain: "ImageConversionError", code: 0, userInfo: nil)
         }
         
-        print("Image Data => \(imageData)")
-        
         let imageRef = fileStorage.child("\(currentDeckId)/\(UUID().uuidString).jpg")
-        
-        print("Image Ref => \(imageRef)")
-
+    
         
         let uploadTask = try await imageRef.putDataAsync(imageData, metadata: nil)
         let downloadURL = try await imageRef.downloadURL()
-        
-        print("downloadURL => \(downloadURL)")
-        
+                
         let flashcardData: [String: Any] = [
             "promptImageUrl": downloadURL.absoluteString,
             "answer": answer,
