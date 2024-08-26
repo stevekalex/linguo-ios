@@ -12,7 +12,7 @@
 		5F7183852C6E23BF00D67A5D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7183842C6E23BF00D67A5D /* Extensions.swift */; };
 		5FC9FA402C6E41A800B1879D /* CreateDeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC9FA3F2C6E41A800B1879D /* CreateDeckView.swift */; };
 		5FC9FA462C6F3F6700B1879D /* DeckDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC9FA452C6F3F6700B1879D /* DeckDetailView.swift */; };
-		5FC9FA4C2C6F5DDA00B1879D /* CreateFlashcardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC9FA4B2C6F5DDA00B1879D /* CreateFlashcardView.swift */; };
+		5FC9FA4C2C6F5DDA00B1879D /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC9FA4B2C6F5DDA00B1879D /* CameraView.swift */; };
 		5FC9FA4E2C6F5EFC00B1879D /* ReviewFlashcardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC9FA4D2C6F5EFC00B1879D /* ReviewFlashcardView.swift */; };
 		5FC9FA5A2C71C9AC00B1879D /* MijickCameraView in Frameworks */ = {isa = PBXBuildFile; productRef = 5FC9FA592C71C9AC00B1879D /* MijickCameraView */; };
 		5FCEDB232C6A6345004721E8 /* LinguoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCEDB222C6A6345004721E8 /* LinguoApp.swift */; };
@@ -36,6 +36,8 @@
 		5FF81D3A2C74811900681DC2 /* Flashcard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF81D392C74811900681DC2 /* Flashcard.swift */; };
 		5FFD6F452C74886B00413985 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 5FFD6F442C74886B00413985 /* FirebaseStorage */; };
 		5FFD6F472C76033500413985 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5FFD6F462C76033500413985 /* GoogleService-Info.plist */; };
+		5FFD6F492C7C866E00413985 /* CreateFlashcardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFD6F482C7C866E00413985 /* CreateFlashcardView.swift */; };
+		5FFD6F4B2C7CB05C00413985 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFD6F4A2C7CB05C00413985 /* Toast.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,7 +63,7 @@
 		5F7183842C6E23BF00D67A5D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		5FC9FA3F2C6E41A800B1879D /* CreateDeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDeckView.swift; sourceTree = "<group>"; };
 		5FC9FA452C6F3F6700B1879D /* DeckDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckDetailView.swift; sourceTree = "<group>"; };
-		5FC9FA4B2C6F5DDA00B1879D /* CreateFlashcardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFlashcardView.swift; sourceTree = "<group>"; };
+		5FC9FA4B2C6F5DDA00B1879D /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		5FC9FA4D2C6F5EFC00B1879D /* ReviewFlashcardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewFlashcardView.swift; sourceTree = "<group>"; };
 		5FCEDB1F2C6A6345004721E8 /* Linguo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Linguo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FCEDB222C6A6345004721E8 /* LinguoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinguoApp.swift; sourceTree = "<group>"; };
@@ -85,6 +87,8 @@
 		5FF81D372C739EB100681DC2 /* ImagePreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePreviewView.swift; sourceTree = "<group>"; };
 		5FF81D392C74811900681DC2 /* Flashcard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flashcard.swift; sourceTree = "<group>"; };
 		5FFD6F462C76033500413985 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5FFD6F482C7C866E00413985 /* CreateFlashcardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFlashcardView.swift; sourceTree = "<group>"; };
+		5FFD6F4A2C7CB05C00413985 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,13 +202,16 @@
 		5FCEDB8D2C6A64A5004721E8 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				5FC9FA4B2C6F5DDA00B1879D /* CreateFlashcardView.swift */,
+				5F71837F2C6DE5C000D67A5D /* DeckView.swift */,
+				5FC9FA4B2C6F5DDA00B1879D /* CameraView.swift */,
 				5FC9FA3F2C6E41A800B1879D /* CreateDeckView.swift */,
 				5FC9FA452C6F3F6700B1879D /* DeckDetailView.swift */,
 				5FF81D372C739EB100681DC2 /* ImagePreviewView.swift */,
 				5FCEDB992C6B7BDA004721E8 /* InputView.swift */,
 				5FC9FA4D2C6F5EFC00B1879D /* ReviewFlashcardView.swift */,
 				5FCEDBA32C6BA81D004721E8 /* SettingsRowView.swift */,
+				5FFD6F482C7C866E00413985 /* CreateFlashcardView.swift */,
+				5FFD6F4A2C7CB05C00413985 /* Toast.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -259,7 +266,6 @@
 			children = (
 				5FCEDB952C6A65B8004721E8 /* LoginView.swift */,
 				5FCEDB9B2C6B930B004721E8 /* RegistrationView.swift */,
-				5F71837F2C6DE5C000D67A5D /* DeckView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -427,6 +433,7 @@
 				5FCEDB962C6A65B8004721E8 /* LoginView.swift in Sources */,
 				5FF81D382C739EB100681DC2 /* ImagePreviewView.swift in Sources */,
 				5FCEDB9A2C6B7BDA004721E8 /* InputView.swift in Sources */,
+				5FFD6F492C7C866E00413985 /* CreateFlashcardView.swift in Sources */,
 				5FCEDB252C6A6345004721E8 /* ContentView.swift in Sources */,
 				5FCEDB232C6A6345004721E8 /* LinguoApp.swift in Sources */,
 				5FCEDBA62C6BAB73004721E8 /* User.swift in Sources */,
@@ -440,7 +447,8 @@
 				5FCEDBA42C6BA81D004721E8 /* SettingsRowView.swift in Sources */,
 				5F7183822C6E12DD00D67A5D /* Deck.swift in Sources */,
 				5FCEDBB12C6C9D39004721E8 /* AuthViewModel.swift in Sources */,
-				5FC9FA4C2C6F5DDA00B1879D /* CreateFlashcardView.swift in Sources */,
+				5FFD6F4B2C7CB05C00413985 /* Toast.swift in Sources */,
+				5FC9FA4C2C6F5DDA00B1879D /* CameraView.swift in Sources */,
 				5FC9FA402C6E41A800B1879D /* CreateDeckView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

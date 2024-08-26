@@ -1,117 +1,102 @@
+//
+//  CreateFlashCardView.swift
+//  Linguo
+//
+//  Created by Steve Alex on 26/08/2024.
 
 import SwiftUI
-import MijickCameraView
 
-struct CustomCameraView: MCameraView {
-    @ObservedObject var cameraManager: MijickCameraView.CameraManager
-    let namespace: Namespace.ID
-    let closeControllerAction: () -> ()
-
-
-    var body: some View {
-        VStack(spacing: 0) {
-            createCameraView()
-            createCaptureButton()
-        }
+extension View {
+    func hideKeyboard() {
+        let resign = #selector(UIResponder.resignFirstResponder)
+        UIApplication.shared.sendAction(resign, to: nil, from: nil, for: nil)
     }
 }
-private extension CustomCameraView {
 
-    func createCaptureButton() -> some View {
+struct CreateFlashcardView: View {
+    @State var deckId: String
+    @State var prompt: String = ""
+    @State var answer: String = ""
+    @State private var toast: Toast? = nil
+    @StateObject private var flashCardService = FlashcardService()
+
+    var body: some View {
+        GeometryReader { geometry in
+            VStack {
+                Text("Create")
+                    .frame(alignment: .top)
+                    .font(.custom("Avenir Next Bold", size: 34))
+                    .fontWeight(.bold)
+                    .frame(width: geometry.size.width - 75)
+                    .padding(.top, geometry.safeAreaInsets.top - 50)
+                
+                
+                VStack {
+                    Text("Front")
+                        .frame(alignment: .leading)
+                        .font(.custom("Avenir Next", size: 20))
+                        .fontWeight(.bold)
+                        .frame(width: UIScreen.main.bounds.width - 75)
+                    
+                    TextField("", text: $prompt, axis: .vertical)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(Color.white, lineWidth: 3)
+                        )
+                        .frame(width: UIScreen.main.bounds.width - 75)
+                        .lineLimit(5, reservesSpace: true)
+                        .multilineTextAlignment(.leading)
+                        .font(.custom("Avenir Next", size: 14))
+                        .padding(.bottom, 20)
+                }
+                
+                VStack {
+                    Text("Back")
+                        .frame(alignment: .leading)
+                        .font(.custom("Avenir Next", size: 20))
+                        .fontWeight(.bold)
+                        .frame(width: UIScreen.main.bounds.width - 75)
+                    
+                    TextField("", text: $answer, axis: .vertical)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(Color.white, lineWidth: 3)
+                        )
+                        .frame(width: UIScreen.main.bounds.width - 75)
+                        .lineLimit(6, reservesSpace: true)
+                        .multilineTextAlignment(.leading) // Align text to the left
+                        .font(.custom("Avenir Next", size: 14)) // Set custom font and size
+                }
+            }
+            .frame(width: geometry.size.width)
+        }
+        .navigationBarItems(trailing: Button(action: {
+            print("Create flashcard!")
+            toast = Toast(style: .success, message: "Saved.", width: 160)
+            // TODO - create popup + with success message + wipe out state
+            Task {
+                try await flashCardService.createFlashcard(
+                    deckId: deckId,
+                    prompt: prompt,
+                    answer: answer
+                )
+                prompt = ""
+                answer = ""
+            }
         
-        Button(action: captureOutput) {
-            Circle()
-                .stroke(Color.white, lineWidth: 5)
-                .frame(width: 75, height: 75)
-                .padding(.top)
-        }
-        .padding()
-    }
-}
-
-struct CustomCameraPreview: MCameraPreview {
-    let capturedMedia: MijickCameraView.MCameraMedia
-    let namespace: Namespace.ID
-    let retakeAction: () -> ()
-    let acceptMediaAction: () -> ()
-
-
-    var body: some View {
-        VStack(spacing: 0) {
-            Spacer()
-            createContentView()
-            Spacer()
-            createButtons()
-        }
-    }
-}
-private extension CustomCameraPreview {
-    func createContentView() -> some View { ZStack {
-        if let image = capturedMedia.image { createImageView(image) }
-        else { EmptyView() }
-
-    }}
-    func createButtons() -> some View {
-        HStack(spacing: 24) {
-            createRetakeButton()
-            createSaveButton()
-        }
-    }
-}
-private extension CustomCameraPreview {
-    func createImageView(_ image: UIImage) -> some View {
-        Image(uiImage: image)
-            .resizable()
-            .aspectRatio(contentMode: .fit)
-            .ignoresSafeArea()
-    }
-    func createRetakeButton() -> some View {
-        Button(action: retakeAction) { Text("Retake") }
-    }
-    func createSaveButton() -> some View {
-        Button(action: acceptMediaAction) {
+        } ) {
             Text("Save")
+                .foregroundColor(Color.blue)
+        } )
+        .onTapGesture {
+            hideKeyboard()
         }
-            
+        .toastView(toast: $toast)
     }
 }
 
-struct CameraView: View {
-    @State var currentDeckId: String
-    @State private var showCamera = true
-    @State private var image: UIImage = UIImage()
-
-    @ObservedObject private var manager: CameraManager = .init(
-        outputType: .photo,
-        cameraPosition: .back,
-        resolution: .hd4K3840x2160,
-        frameRate: 25,
-        flashMode: .off,
-        isGridVisible: true,
-        focusImageColor: .yellow,
-        focusImageSize: 92
-    )
-   
-    var body: some View {
-        if showCamera {
-            MCameraController(manager: manager)
-                .cameraScreen(CustomCameraView.init)
-                .mediaPreviewScreen(CustomCameraPreview.init)
-                .onImageCaptured { data in
-                    image = data
-                    showCamera = false
-                    print("IMAGE HAS BEEN CAPTURED")
-                }
-                .afterMediaCaptured { $0
-                    .closeCameraController(true)
-                    .custom { print("Media object has been successfully captured") }
-                }
-                .onCloseController {
-                    print("CLOSE THE CONTROLLER")
-                }
-        } else {
-            ImagePreviewView(currentDeckId: currentDeckId, uiImage: image)
-        }
+struct CreateFlashcardView_Previews: PreviewProvider {
+    static var previews: some View {
+        CreateFlashcardView(deckId: "deck_id")
     }
-
 }

@@ -3,4 +3,52 @@
    uuid = "800ABFC5-8795-4523-9010-6209BFBD81ED"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "48D9B4E5-E046-476F-B3E3-D50C68618298"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Linguo/Model/Flashcard.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "getFlashcards(deckId:reviewDate:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "48D9B4E5-E046-476F-B3E3-D50C68618298 - 3285a5fb44473a76"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for Linguo.FlashcardService.getFlashcards(deckId: Swift.String, reviewDate: Foundation.Date) async throws -&gt; Swift.Array&lt;Linguo.FlashcardData&gt;"
+                  moduleName = "Linguo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/stevealex/Documents/Projects/Linguo/Linguo/Model/Flashcard.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47">
+               </Location>
+               <Location
+                  uuid = "48D9B4E5-E046-476F-B3E3-D50C68618298 - ddbb00b90990fe48"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for Linguo.FlashcardService.getFlashcards(deckId: Swift.String, reviewDate: Foundation.Date) async throws -&gt; Swift.Array&lt;Linguo.FlashcardData&gt;"
+                  moduleName = "Linguo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/stevealex/Documents/Projects/Linguo/Linguo/Model/Flashcard.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

@@ -72,32 +72,46 @@ class FlashcardService: ObservableObject {
          }
     }
     
-    func createFlashcard(currentDeckId: String, prompt: UIImage, answer: String, lastReviewDate: Date, nextReviewDate: Date) async throws -> String {
-        
+    func createFlashcard<T: Equatable>(deckId: String, prompt: T, answer: String) async throws -> String {
+        print("PROMPT >>")
+        print(prompt)
+        var flashcardData: [String: Any] = [:]
         let db = Firestore.firestore()
-        let fileStorage = Storage.storage().reference()
         
-        guard let imageData = prompt.jpegData(compressionQuality: 0.8) else {
-          throw NSError(domain: "ImageConversionError", code: 0, userInfo: nil)
+        if let stringPrompt = prompt as? String {
+            flashcardData = [
+                "promptImageUrl": "",
+                "promptString": prompt,
+                "answer": answer,
+                "lastReviewDate": Date(),
+                "nextReviewDate": Date(),
+                "deckId": deckId
+            ]
+        } else if let imagePrompt = prompt as? UIImage {
+            // TODO - refactor this into another method to store image
+            let fileStorage = Storage.storage().reference()
+            guard let imageData = imagePrompt.jpegData(compressionQuality: 0.8) else {
+              throw NSError(domain: "ImageConversionError", code: 0, userInfo: nil)
+            }
+            
+            let imageRef = fileStorage.child("\(deckId)/\(UUID().uuidString).jpg")
+        
+            let uploadTask = try await imageRef.putDataAsync(imageData, metadata: nil)
+            let downloadURL = try await imageRef.downloadURL()
+                    
+            flashcardData = [
+                "promptImageUrl": downloadURL.absoluteString,
+                "promptString": "",
+                "answer": answer,
+                "lastReviewDate": Date(),
+                "nextReviewDate": Date(),
+                "deckId": deckId
+            ]
         }
-        
-        let imageRef = fileStorage.child("\(currentDeckId)/\(UUID().uuidString).jpg")
-    
-        
-        let uploadTask = try await imageRef.putDataAsync(imageData, metadata: nil)
-        let downloadURL = try await imageRef.downloadURL()
-                
-        let flashcardData: [String: Any] = [
-            "promptImageUrl": downloadURL.absoluteString,
-            "answer": answer,
-            "lastReviewDate": lastReviewDate,
-            "nextReviewDate": nextReviewDate,
-            "deckId": currentDeckId
-        ]
         
         let docRef = db.collection("flashcards").document()
         try await docRef.setData(flashcardData)
+            
         return docRef.documentID
-
     }
 }
