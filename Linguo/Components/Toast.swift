@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+// https://ondrej-kvasnovsky.medium.com/how-to-build-a-simple-toast-message-view-in-swiftui-b2e982340bd
 
 struct Toast: Equatable {
   var style: ToastStyle

@@ -54,7 +54,7 @@ class FlashcardService: ObservableObject {
         
         do {
              // Fetch data asynchronously
-             let data = try await storageRef.data(maxSize: 11795930)
+             let data = try await storageRef.data(maxSize: 11795930) // TODO - make this more appropriate or compress image before storing
              print("DATA =>")
              print(data)
              // Attempt to create a UIImage from the fetched data
@@ -81,7 +81,7 @@ class FlashcardService: ObservableObject {
         if let stringPrompt = prompt as? String {
             flashcardData = [
                 "promptImageUrl": "",
-                "promptString": prompt,
+                "promptString": stringPrompt,
                 "answer": answer,
                 "lastReviewDate": Date(),
                 "nextReviewDate": Date(),
