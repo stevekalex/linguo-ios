@@ -78,8 +78,9 @@ private extension CustomCameraPreview {
 
 struct CameraView: View {
     @State var deckId: String
-    @State private var showCamera = true
-    @State private var image: UIImage = UIImage()
+    @Binding var displayCamera: Bool
+    @Binding var image: UIImage?
+    @Environment(\.presentationMode) var presentationMode
 
     @ObservedObject private var manager: CameraManager = .init(
         outputType: .photo,
@@ -93,14 +94,15 @@ struct CameraView: View {
     )
    
     var body: some View {
-        if showCamera {
+        if displayCamera {
             MCameraController(manager: manager)
                 .cameraScreen(CustomCameraView.init)
                 .mediaPreviewScreen(CustomCameraPreview.init)
                 .onImageCaptured { data in
                     image = data
-                    showCamera = false
+                    displayCamera = false
                     print("IMAGE HAS BEEN CAPTURED")
+                    presentationMode.wrappedValue.dismiss()
                 }
                 .afterMediaCaptured { $0
                     .closeCameraController(true)
@@ -109,8 +111,6 @@ struct CameraView: View {
                 .onCloseController {
                     print("CLOSE THE CONTROLLER")
                 }
-        } else {
-            ImagePreviewView(deckId: deckId, uiImage: image)
         }
     }
 
