@@ -33,7 +33,7 @@ struct DeckDetailView: View {
             }
             
             HStack {
-                NavigationLink(destination: CameraView(currentDeckId: deck.id))
+                NavigationLink(destination: CreateFlashcardView(deckId: deck.id))
                 {
                     Text("Create ➕")
                         .font(.custom("Avenir Next Bold", size: 18))

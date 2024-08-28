@@ -12,7 +12,7 @@ import FirebaseStorage
 
 struct ImagePreviewView: View {
     @StateObject private var flashcardServce = FlashcardService()
-    @State var currentDeckId: String
+    @State var deckId: String
     @State var uiImage: UIImage
     
     
@@ -21,11 +21,9 @@ struct ImagePreviewView: View {
             print("SAVE FLASHCARD")
 
             try await flashcardServce.createFlashcard(
-                currentDeckId: currentDeckId,
+                deckId: deckId,
                 prompt: uiImage,
-                answer: "Here is an answer",
-                lastReviewDate: Date(),
-                nextReviewDate: Date()
+                answer: "Here is an answer"
             )
         } catch {
             print("ERROR CREATING FLASHCARD")

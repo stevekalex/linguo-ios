@@ -37,7 +37,7 @@ struct ReviewFlashcardView: View {
         }
         .onAppear {
             Task {
-                await getFlashCardData(deckId: deckId, reviewDate: Date())
+                try await getFlashCardData(deckId: deckId, reviewDate: Date())
             }
         }
     }
