@@ -5,6 +5,7 @@
 //  Created by Steve Alex on 26/08/2024.
 
 import SwiftUI
+import PhotosUI
 
 extension View {
     func hideKeyboard() {
@@ -20,7 +21,9 @@ struct CreateFlashcardView: View {
     @State var displayCamera: Bool = false
     @State var image: UIImage? = nil
     @State private var toast: Toast? = nil
-    
+    @State private var selectedPhotos: [PhotosPickerItem] = []
+    @State private var images: [UIImage] = []
+    @State private var errorMessage: String?
     @StateObject private var flashCardService = FlashcardService()
     
     var body: some View {
@@ -87,21 +90,18 @@ struct CreateFlashcardView: View {
                 ToolbarItemGroup(placement: .keyboard) {
                     Spacer()
                     Button(action: {
+                        print("Take picture")
+
                         displayCamera = true
                         hideKeyboard()
-                        print("Take picture")
                     }, label: {
                         Image(systemName: "camera.fill")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .foregroundColor(.blue)
                     })
-                    Button(action: {print("Access photo library picture")}, label: {
-                        Image(systemName: "photo.on.rectangle")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .foregroundColor(.blue)
-                    })
+                    
+                    PhotoPickerView(image: $image)
                 }
             }
         }
@@ -110,7 +110,6 @@ struct CreateFlashcardView: View {
             toast = Toast(style: .success, message: "Saved.", width: 160)
             // TODO - create popup + with success message + wipe out state
             Task {
-
                 if (image != nil) {
                     try await flashCardService.createFlashcard(
                         deckId: deckId,
