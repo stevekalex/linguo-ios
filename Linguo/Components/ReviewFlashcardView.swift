@@ -14,25 +14,27 @@ struct FlashcardReviewSessionView: View {
     @StateObject private var flashcardServce = FlashcardService()
     @State private var flashcards: [FlashcardData] = []
     @State private var flashcard: FlashcardData?;
-    @State private var showFlashcardView = false
+    @State private var showFlashcardView: Bool = false
     @State private var currentIndex: Int = 0
     
     func getFlashCardData(deckId: String, reviewDate: Date) async {
         do {
             let fetchedFlashcards = try await flashcardServce.getFlashcards(deckId: deckId, reviewDate: reviewDate);
             self.flashcards = fetchedFlashcards
-            self.flashcard = fetchedFlashcards[0]
-            self.showFlashcardView = true
+            if (self.flashcards.count > 0) {
+                self.flashcard = self.flashcards[0]
+                self.showFlashcardView = true
+            }
         } catch {
-            print("Error loading flashcards")
+            print("Error loading flashcards: \(error.localizedDescription)")
         }
     }
     
     var body: some View {
         VStack {
-            if showFlashcardView {
+            if showFlashcardView, let currentFlashcard = flashcard {
                 FlashcardView(
-                    flashcard: flashcard!,
+                    flashcard: currentFlashcard,
                     flashcards: $flashcards,
                     showFlashcardView: $showFlashcardView
                 )
