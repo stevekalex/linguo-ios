@@ -13,22 +13,36 @@ struct DeckDetailView: View {
 
     var body: some View {
         VStack {
-            Text(deck.name)
-                .font(.custom("Avenir Next Bold", size: 34))
-                .fontWeight(.bold)
-                .frame(width: UIScreen.main.bounds.width - 75)
+            Spacer()
             
             VStack (alignment: .leading) {
-                Text("Language: \(deck.language)")
-                Text("Reviewed Today: \(deck.reviewedToday)")
-                Text("Remaining: \(deck.reviewCardsRemaining)")
+                HStack {
+                    Text(deck.name)
+                        .font(.custom("Avenir Next Bold", size: 34))
+                        .fontWeight(.bold)
+                    
+                    Text(String(deck.reviewedToday))
+                        .foregroundStyle(.green)
+                        .font(.custom("Avenir Next Bold", size: 34))
+
+                    
+                    Text(String(deck.reviewCardsRemaining))
+                        .foregroundStyle(.red)
+                        .font(.custom("Avenir Next Bold", size: 34))
+                }
+                .truncationMode(.tail)
+                .frame(width: UIScreen.main.bounds.width - 75)
+                .padding(.top, 10)
+                .padding([.leading, .trailing], 8)
+                
             }
-            
+        
+                        
             HStack {
                 NavigationLink(destination: CreateFlashcardView(deckId: deck.id))
                 {
                     Text("Create ➕")
-                        .font(.custom("Avenir Next Bold", size: 18))
+                        .font(Fonts.main(18))
                         .fontWeight(.semibold)
                         .frame(width: UIScreen.main.bounds.width - 250, height: 48)
                         .foregroundColor(.white)
@@ -40,7 +54,7 @@ struct DeckDetailView: View {
                 NavigationLink(destination: FlashcardReviewSessionView(deckId: deck.id))
                 {
                     Text("Review ♻️")
-                        .font(.custom("Avenir Next Bold", size: 18))
+                        .font(Fonts.main(18))
                         .fontWeight(.semibold)
                         .frame(width: UIScreen.main.bounds.width - 250, height: 48)
                         .foregroundColor(.white)
@@ -49,6 +63,9 @@ struct DeckDetailView: View {
                         .padding(.top, 30)
                 }
             }
+            .padding(.bottom, 50)
+            
+            Spacer()
         }
     }
 }
