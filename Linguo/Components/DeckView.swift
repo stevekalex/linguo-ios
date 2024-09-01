@@ -1,6 +1,5 @@
 import Foundation
 import SwiftUI
-private let fonts = Fonts.init()
 
 
 struct DeckListView: View {
@@ -22,7 +21,7 @@ struct DeckListView: View {
                 }
                 .navigationTitle("Decks")
                 .navigationBarTitleDisplayMode(.inline)
-                .font(fonts.main(deckFontSize))
+                .font(Fonts.main(deckFontSize))
                 .navigationBarItems(trailing: Button(action: {
                     showPopup = true
                 } ) {
@@ -52,15 +51,15 @@ struct DeckRowView: View {
     var body: some View {
         HStack {
             Text(deck.name)
-                .font(fonts.main(deckFontSize))
+                .font(Fonts.main(deckFontSize))
             Spacer()
             Text(String(deck.reviewedToday))
                 .foregroundStyle(.green)
-                .font(fonts.header(reviewedCardsFontSize))
+                .font(Fonts.header(reviewedCardsFontSize))
 
             Text(String(deck.reviewCardsRemaining))
                 .foregroundStyle(.red)
-                .font(fonts.header(reviewedCardsFontSize))
+                .font(Fonts.header(reviewedCardsFontSize))
         }
     }
 }
