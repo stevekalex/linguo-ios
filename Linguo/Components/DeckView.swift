@@ -1,48 +1,35 @@
-//
-//  DeckView.swift
-//  Linguo
-//
-//  Created by Steve Alex on 15/08/2024.
-//
-
 import Foundation
 import SwiftUI
+private let fonts = Fonts.init()
+
 
 struct DeckListView: View {
     @StateObject private var deckService = DeckService()
     @State private var showPopup: Bool = false
+
+    private let buttonSize: CGFloat = 24
+    private let deckFontSize: CGFloat = 16
 
     var body: some View {
         NavigationView {
             VStack {
                 List {
                     ForEach(deckService.decks) { deck in
-                        NavigationLink(destination: DeckDetailView(deck: deck))
-                        {
-                            HStack () {
-                                Text(deck.name)
-                                Spacer()
-                                Text(String(deck.reviewedToday))
-                                    .foregroundStyle(.green)
-                                    .font(.custom("Avenir Next Bold", size: 16))
-                                
-                                Text(String(deck.reviewCardsRemaining))
-                                    .foregroundStyle(.red)
-                                    .font(.custom("Avenir Next Bold", size: 16))
-                            }
+                        NavigationLink(destination: DeckDetailView(deck: deck)) {
+                            DeckRowView(deck: deck)
                         }
                     }
                 }
                 .navigationTitle("Decks")
                 .navigationBarTitleDisplayMode(.inline)
-                .font(.custom("Avenir Next", size: 16))
+                .font(fonts.main(deckFontSize))
                 .navigationBarItems(trailing: Button(action: {
                     showPopup = true
                 } ) {
                     Image(systemName: "plus")
                         .resizable()
                         .padding(6)
-                        .frame(width: 24, height: 24)
+                        .frame(width: buttonSize, height: buttonSize)
                         .background(Color.blue)
                         .clipShape(Circle())
                         .foregroundColor(.white)
@@ -54,6 +41,27 @@ struct DeckListView: View {
             CreateDeckView(showPopup: $showPopup)
         }
         .environmentObject(deckService)
+    }
+}
+
+struct DeckRowView: View {
+    let deck: IDeck
+    private let deckFontSize: CGFloat = 18
+    private let reviewedCardsFontSize: CGFloat = 14
+
+    var body: some View {
+        HStack {
+            Text(deck.name)
+                .font(fonts.main(deckFontSize))
+            Spacer()
+            Text(String(deck.reviewedToday))
+                .foregroundStyle(.green)
+                .font(fonts.header(reviewedCardsFontSize))
+
+            Text(String(deck.reviewCardsRemaining))
+                .foregroundStyle(.red)
+                .font(fonts.header(reviewedCardsFontSize))
+        }
     }
 }
 
