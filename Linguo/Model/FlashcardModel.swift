@@ -12,8 +12,8 @@ import SwiftUI
 
 struct FlashcardData: Identifiable {
     let id: String
-    let promptImageUrl: String
-    let image: UIImage
+    let promptImage: UIImage?
+    let promptString: String?
     let answer: String
     let lastReviewDate: Date
     let nextReviewDate: Date
@@ -31,12 +31,17 @@ class FlashcardService: ObservableObject {
         
         for document in querySnapshot.documents {
             let data = document.data()
-            let image = await getImageData(imageUrl: data["promptImageUrl"] as? String ?? "")
+            var image: UIImage?
+            
+            if (data["promptImageUrl"] as? String != "") {
+                image = await getImageData(imageUrl: data["promptImageUrl"] as? String ?? "")
+            }
+            
             flashcards.append(
                 FlashcardData(
                     id: document.documentID,
-                    promptImageUrl: data["promptImageUrl"] as? String ?? "",
-                    image: image,
+                    promptImage: image ?? nil,
+                    promptString: data["promptString"] as? String ?? nil,
                     answer: data["answer"] as? String ?? "",
                     lastReviewDate: data["lastReviewDate"] as? Date ?? Date(),
                     nextReviewDate: data["nextReviewDate"] as? Date ?? Date()

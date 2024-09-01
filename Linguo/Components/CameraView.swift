@@ -6,8 +6,6 @@ struct CustomCameraView: MCameraView {
     @ObservedObject var cameraManager: MijickCameraView.CameraManager
     let namespace: Namespace.ID
     let closeControllerAction: () -> ()
-
-
     var body: some View {
         VStack(spacing: 0) {
             createCameraView()
@@ -16,9 +14,7 @@ struct CustomCameraView: MCameraView {
     }
 }
 private extension CustomCameraView {
-
     func createCaptureButton() -> some View {
-        
         Button(action: captureOutput) {
             Circle()
                 .stroke(Color.white, lineWidth: 5)
@@ -34,8 +30,6 @@ struct CustomCameraPreview: MCameraPreview {
     let namespace: Namespace.ID
     let retakeAction: () -> ()
     let acceptMediaAction: () -> ()
-
-
     var body: some View {
         VStack(spacing: 0) {
             Spacer()
@@ -92,7 +86,7 @@ struct CameraView: View {
         focusImageColor: .yellow,
         focusImageSize: 92
     )
-   
+ 
     var body: some View {
         if displayCamera {
             MCameraController(manager: manager)

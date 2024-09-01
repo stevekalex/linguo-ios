@@ -6,14 +6,6 @@
 //
 
 import Foundation
-//
-//  File.swift
-//  Linguo
-//
-//  Created by Steve Alex on 16/08/2024.
-//
-
-import Foundation
 import SwiftUI
 
 struct DeckDetailView: View {
@@ -45,7 +37,7 @@ struct DeckDetailView: View {
                         .padding(.top, 30)
                 }
                 
-                NavigationLink(destination: ReviewFlashcardView(deckId: deck.id))
+                NavigationLink(destination: FlashcardReviewSessionView(deckId: deck.id))
                 {
                     Text("Review ♻️")
                         .font(.custom("Avenir Next Bold", size: 18))

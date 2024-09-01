@@ -17,19 +17,18 @@ extension View {
 struct CreateFlashcardView: View {
     @State var deckId: String
     @State var prompt: String = ""
-    @State var answer: String = ""
-    @State var displayCamera: Bool = false
+    @State var promptIsFocused: Bool = false
     @State var image: UIImage? = nil
+    @State var answer: String = ""
+    @State var answerIsFocused: Bool = false
+    @State var displayCamera: Bool = false
     @State private var toast: Toast? = nil
-    @State private var selectedPhotos: [PhotosPickerItem] = []
-    @State private var images: [UIImage] = []
-    @State private var errorMessage: String?
     @StateObject private var flashCardService = FlashcardService()
     
     var body: some View {
-        NavigationLink(destination: CameraView(deckId: deckId, displayCamera: $displayCamera, image: $image), isActive: $displayCamera) {
-            EmptyView()
-        }
+//        NavigationLink(destination: CameraView(deckId: deckId, displayCamera: $displayCamera, image: $image), isActive: $displayCamera) {
+//            EmptyView()
+//        }
         
         GeometryReader { geometry in
             VStack {
@@ -64,6 +63,10 @@ struct CreateFlashcardView: View {
                             .multilineTextAlignment(.leading)
                             .font(.custom("Avenir Next", size: 14))
                             .padding(.bottom, 20)
+                            .onTapGesture {
+                                promptIsFocused = true
+                                answerIsFocused = false
+                            }
                     }
                 }
                 
@@ -83,25 +86,62 @@ struct CreateFlashcardView: View {
                         .lineLimit(6, reservesSpace: true)
                         .multilineTextAlignment(.leading) // Align text to the left
                         .font(.custom("Avenir Next", size: 14)) // Set custom font and size
+                        .onTapGesture {
+                            promptIsFocused = false
+                            answerIsFocused = true
+                        }
                 }
             }
             .frame(width: geometry.size.width)
             .toolbar {
                 ToolbarItemGroup(placement: .keyboard) {
-                    Spacer()
-                    Button(action: {
-                        print("Take picture")
-
-                        displayCamera = true
-                        hideKeyboard()
-                    }, label: {
-                        Image(systemName: "camera.fill")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .foregroundColor(.blue)
-                    })
+                    if (promptIsFocused) {
+                        Spacer()
+//                        Button(action: {
+//                            displayCamera = true
+//                            hideKeyboard()
+//                        }, label: {
+//                            Image(systemName: "camera.fill")
+//                                .resizable()
+//                                .aspectRatio(contentMode: .fit)
+//                                .foregroundColor(.blue)
+//                        })
                     
-                    PhotoPickerView(image: $image)
+                        PhotoPickerView(image: $image)
+                    }
+
+                    if (answerIsFocused) {
+                        if (image != nil && answer == "") {
+                            Spacer()
+                            Button(action: {
+                                Task {
+                                    let imageLabel = await classifyAndTranslateImage(image: image!, language: "Spanish")
+                                    print("Classify image")
+                                    answer = imageLabel
+                                }
+                            }, label: {
+                                Image(systemName: "questionmark.circle.fill")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .foregroundColor(.blue)
+                            })
+                        }
+
+                        if (prompt != "" && answer == "") {
+                            Spacer()
+                            Button(action: {
+                                Task {
+                                    let translatedText = await translateText(text: prompt, language: "Spanish")
+                                    answer = translatedText
+                                }
+                            }, label: {
+                                Image(systemName: "questionmark.circle.fill")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .foregroundColor(.blue)
+                            })
+                        }
+                    }
                 }
             }
         }
