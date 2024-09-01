@@ -46,7 +46,7 @@ struct DeckListView: View {
 
 struct DeckRowView: View {
     let deck: IDeck
-    private let deckFontSize: CGFloat = 18
+    private let deckFontSize: CGFloat = 16
     private let reviewedCardsFontSize: CGFloat = 14
 
     var body: some View {

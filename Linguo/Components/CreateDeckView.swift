@@ -1,14 +1,6 @@
-//
-//  ComponentView.swift
-//  Linguo
-//
-//  Created by Steve Alex on 13/08/2024.
-//
-
 import SwiftUI
 
 struct CreateDeckView: View {
-    @EnvironmentObject var deckService: DeckService
     @Binding var showPopup: Bool
     @State var newDeckName = ""
     @State var newDeckLanguage = ""
@@ -17,43 +9,8 @@ struct CreateDeckView: View {
 
     var body: some View {
         Form {
-            Section {
-                VStack {
-                    TextField(
-                        "Deck Name",
-                        text: $newDeckName
-                    )
-                    Picker("Language", selection: $newDeckLanguage) {
-                        Text("Language").tag(nil as String?)
-                        ForEach(languages, id: \.self) { item in
-                            Text(item)
-                        }
-                    }
-                    .pickerStyle(.menu)
-                }
-            }
-            
-            Section {
-                GeometryReader { geometry in
-                    HStack {
-                        Spacer()
-                        Button("Create Deck") {
-                            print("Create Deck")
-                            showPopup = false
-                            Task {
-                                await deckService.createNewDeck(
-                                    name: newDeckName,
-                                    language: newDeckLanguage,
-                                    reviewedToday: 0,
-                                    reviewCardRemaining: 0
-                                )
-                            }
-                        }
-                        .frame(maxWidth: geometry.size.width / 2, maxHeight: .infinity)
-                        Spacer()
-                    }
-                }
-            }
+            DeckDetailsSection(newDeckName: $newDeckName, newDeckLanguage: $newDeckLanguage, languages: languages)
+            CreateDeckButtonSection(showPopup: $showPopup, newDeckName: newDeckName, newDeckLanguage: newDeckLanguage)
         }
         .navigationBarItems(leading: Button(action: {
             showPopup = false
@@ -64,6 +21,54 @@ struct CreateDeckView: View {
         .navigationTitle("Create Deck")
         .navigationBarTitleDisplayMode(.inline)
 
+    }
+}
+
+struct DeckDetailsSection: View {
+    @Binding var newDeckName: String
+    @Binding var newDeckLanguage: String
+    let languages: [String]
+
+    var body: some View {
+        Section() {
+            TextField("Deck Name", text: $newDeckName)
+            Picker("Language", selection: $newDeckLanguage) {
+                ForEach(languages, id: \.self) { language in
+                    Text(language).tag(language)
+                }
+            }
+        }
+    }
+}       
+
+struct CreateDeckButtonSection: View {
+    @EnvironmentObject var deckService: DeckService
+    @Binding var showPopup: Bool
+    let newDeckName: String
+    let newDeckLanguage: String
+
+    var body: some View {
+        Section {
+            GeometryReader { geometry in
+                HStack {
+                    Spacer()
+                    Button("Create Deck") {
+                        print("Create Deck")
+                        showPopup = false
+                        Task {
+                            await deckService.createNewDeck(
+                                name: newDeckName,
+                                language: newDeckLanguage,
+                                reviewedToday: 0,
+                                reviewCardRemaining: 0
+                            )
+                        }
+                    }
+                    .frame(maxWidth: geometry.size.width / 2, maxHeight: .infinity)
+                    Spacer()
+                }
+            }
+        }
     }
 }
 
