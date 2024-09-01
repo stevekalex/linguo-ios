@@ -36,16 +36,16 @@ struct FlashcardReviewSessionView: View {
                     flashcards: $flashcards,
                     showFlashcardView: $showFlashcardView
                 )
-                    .onTapGesture {
-                        print("Tapped")
-                        flashcards.remove(at: 0)
-                        
-                        if ($flashcards.isEmpty) {
-                            showFlashcardView = false
-                        } else {
-                            flashcard = flashcards[0]
-                        }
+                .onTapGesture {
+                    print("Tapped")
+                    flashcards.remove(at: 0)
+                    
+                    if ($flashcards.isEmpty) {
+                        showFlashcardView = false
+                    } else {
+                        flashcard = flashcards[0]
                     }
+                }
             }
         }
         .onAppear {

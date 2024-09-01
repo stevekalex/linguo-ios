@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F2F62412C8328670075498E /* GPT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2F62402C8328670075498E /* GPT.swift */; };
 		5F7183802C6DE5C000D67A5D /* DeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F71837F2C6DE5C000D67A5D /* DeckView.swift */; };
 		5F7183822C6E12DD00D67A5D /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7183812C6E12DD00D67A5D /* Deck.swift */; };
 		5F7183852C6E23BF00D67A5D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7183842C6E23BF00D67A5D /* Extensions.swift */; };
@@ -32,8 +33,10 @@
 		5FCEDBAB2C6BBA0F004721E8 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 5FCEDBAA2C6BBA0F004721E8 /* FirebaseAuth */; };
 		5FCEDBAD2C6BBA0F004721E8 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 5FCEDBAC2C6BBA0F004721E8 /* FirebaseFirestore */; };
 		5FCEDBB12C6C9D39004721E8 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCEDBB02C6C9D39004721E8 /* AuthViewModel.swift */; };
+		5FF28B5A2C7F691A0028650D /* PhotoPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF28B592C7F691A0028650D /* PhotoPickerView.swift */; };
+		5FF28B5E2C80D6750028650D /* FlashcardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF28B5D2C80D6750028650D /* FlashcardView.swift */; };
 		5FF81D382C739EB100681DC2 /* ImagePreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF81D372C739EB100681DC2 /* ImagePreviewView.swift */; };
-		5FF81D3A2C74811900681DC2 /* Flashcard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF81D392C74811900681DC2 /* Flashcard.swift */; };
+		5FF81D3A2C74811900681DC2 /* FlashcardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF81D392C74811900681DC2 /* FlashcardModel.swift */; };
 		5FFD6F452C74886B00413985 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 5FFD6F442C74886B00413985 /* FirebaseStorage */; };
 		5FFD6F472C76033500413985 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5FFD6F462C76033500413985 /* GoogleService-Info.plist */; };
 		5FFD6F492C7C866E00413985 /* CreateFlashcardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFD6F482C7C866E00413985 /* CreateFlashcardView.swift */; };
@@ -58,6 +61,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5F2F62402C8328670075498E /* GPT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPT.swift; sourceTree = "<group>"; };
 		5F71837F2C6DE5C000D67A5D /* DeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckView.swift; sourceTree = "<group>"; };
 		5F7183812C6E12DD00D67A5D /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 		5F7183842C6E23BF00D67A5D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -84,8 +88,10 @@
 		5FCEDBA32C6BA81D004721E8 /* SettingsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
 		5FCEDBA52C6BAB73004721E8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5FCEDBB02C6C9D39004721E8 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		5FF28B592C7F691A0028650D /* PhotoPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerView.swift; sourceTree = "<group>"; };
+		5FF28B5D2C80D6750028650D /* FlashcardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardView.swift; sourceTree = "<group>"; };
 		5FF81D372C739EB100681DC2 /* ImagePreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePreviewView.swift; sourceTree = "<group>"; };
-		5FF81D392C74811900681DC2 /* Flashcard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flashcard.swift; sourceTree = "<group>"; };
+		5FF81D392C74811900681DC2 /* FlashcardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardModel.swift; sourceTree = "<group>"; };
 		5FFD6F462C76033500413985 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5FFD6F482C7C866E00413985 /* CreateFlashcardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFlashcardView.swift; sourceTree = "<group>"; };
 		5FFD6F4A2C7CB05C00413985 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
@@ -124,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				5F7183842C6E23BF00D67A5D /* Extensions.swift */,
+				5F2F62402C8328670075498E /* GPT.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -212,6 +219,8 @@
 				5FCEDBA32C6BA81D004721E8 /* SettingsRowView.swift */,
 				5FFD6F482C7C866E00413985 /* CreateFlashcardView.swift */,
 				5FFD6F4A2C7CB05C00413985 /* Toast.swift */,
+				5FF28B592C7F691A0028650D /* PhotoPickerView.swift */,
+				5FF28B5D2C80D6750028650D /* FlashcardView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -221,7 +230,7 @@
 			children = (
 				5FCEDBA52C6BAB73004721E8 /* User.swift */,
 				5F7183812C6E12DD00D67A5D /* Deck.swift */,
-				5FF81D392C74811900681DC2 /* Flashcard.swift */,
+				5FF81D392C74811900681DC2 /* FlashcardModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -435,9 +444,10 @@
 				5FCEDB9A2C6B7BDA004721E8 /* InputView.swift in Sources */,
 				5FFD6F492C7C866E00413985 /* CreateFlashcardView.swift in Sources */,
 				5FCEDB252C6A6345004721E8 /* ContentView.swift in Sources */,
+				5F2F62412C8328670075498E /* GPT.swift in Sources */,
 				5FCEDB232C6A6345004721E8 /* LinguoApp.swift in Sources */,
 				5FCEDBA62C6BAB73004721E8 /* User.swift in Sources */,
-				5FF81D3A2C74811900681DC2 /* Flashcard.swift in Sources */,
+				5FF81D3A2C74811900681DC2 /* FlashcardModel.swift in Sources */,
 				5F7183802C6DE5C000D67A5D /* DeckView.swift in Sources */,
 				5FCEDB9E2C6BA46B004721E8 /* ProfileView.swift in Sources */,
 				5F7183852C6E23BF00D67A5D /* Extensions.swift in Sources */,
@@ -449,6 +459,8 @@
 				5FCEDBB12C6C9D39004721E8 /* AuthViewModel.swift in Sources */,
 				5FFD6F4B2C7CB05C00413985 /* Toast.swift in Sources */,
 				5FC9FA4C2C6F5DDA00B1879D /* CameraView.swift in Sources */,
+				5FF28B5E2C80D6750028650D /* FlashcardView.swift in Sources */,
+				5FF28B5A2C7F691A0028650D /* PhotoPickerView.swift in Sources */,
 				5FC9FA402C6E41A800B1879D /* CreateDeckView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
