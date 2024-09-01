@@ -32,7 +32,10 @@ struct FlashcardView: View {
                 if (flashcard.promptImage != nil) {
                     Image(uiImage: flashcard.promptImage!)
                         .resizable()
-                        .scaledToFit()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(maxWidth: UIScreen.main.bounds.width - 75, maxHeight: 150)
+                        .clipped()
+
                 } else  {
                     Text(flashcard.promptString!)
                 }
