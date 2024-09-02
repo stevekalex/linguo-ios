@@ -17,6 +17,8 @@ struct FlashcardReviewSessionView: View {
     @State private var showFlashcardView: Bool = false
     @State private var currentIndex: Int = 0
     
+    @State private var shouldAnimate = false
+    
     func getFlashCardData(deckId: String, reviewDate: Date) async {
         do {
             let fetchedFlashcards = try await flashcardServce.getFlashcards(deckId: deckId, reviewDate: reviewDate);
@@ -25,7 +27,7 @@ struct FlashcardReviewSessionView: View {
                 self.flashcard = self.flashcards[0]
                 self.showFlashcardView = true
             }
-        } catch {
+                    } catch {
             print("Error loading flashcards: \(error.localizedDescription)")
         }
     }
@@ -47,6 +49,27 @@ struct FlashcardReviewSessionView: View {
                     } else {
                         flashcard = flashcards[0]
                     }
+                }
+            } else {
+                HStack {
+                    Circle()
+                        .fill(Color.blue)
+                        .frame(width: 20, height: 20)
+                        .scaleEffect(shouldAnimate ? 1.0 : 0.5)
+                        .animation(Animation.easeInOut(duration: 0.5).repeatForever())
+                    Circle()
+                        .fill(Color.blue)
+                        .frame(width: 20, height: 20)
+                        .scaleEffect(shouldAnimate ? 1.0 : 0.5)
+                        .animation(Animation.easeInOut(duration: 0.5).repeatForever().delay(0.3))
+                    Circle()
+                        .fill(Color.blue)
+                        .frame(width: 20, height: 20)
+                        .scaleEffect(shouldAnimate ? 1.0 : 0.5)
+                        .animation(Animation.easeInOut(duration: 0.5).repeatForever().delay(0.6))
+                }
+                .onAppear {
+                    self.shouldAnimate = true
                 }
             }
         }

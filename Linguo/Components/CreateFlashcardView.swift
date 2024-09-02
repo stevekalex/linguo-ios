@@ -109,7 +109,7 @@ struct FrontView: View {
                     )
             } else {
                 TextEditor(text: $prompt)
-                    .padding(20)
+                    .padding(15)
                     .overlay(
                         RoundedRectangle(cornerRadius: 10)
                             .stroke(Color.white, lineWidth: 3)
@@ -145,7 +145,7 @@ struct BackView: View {
                 .padding(.trailing, 200)
             
             TextEditor(text: $answer)
-                .padding(20)
+                .padding(15)
                 .overlay(
                     RoundedRectangle(cornerRadius: 10)
                         .stroke(Color.white, lineWidth: 3)
