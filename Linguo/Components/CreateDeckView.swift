@@ -1,43 +1,62 @@
-//
-//  ComponentView.swift
-//  Linguo
-//
-//  Created by Steve Alex on 13/08/2024.
-//
-
 import SwiftUI
 
 struct CreateDeckView: View {
-    @EnvironmentObject var deckService: DeckService
     @Binding var showPopup: Bool
     @State var newDeckName = ""
-    @State var newDeckLanguage = ""
-    let languages = ["Spanish", "Italian", "French", "English", "Malayalam", "Hindi"]
-    
+    @State var newDeckLanguage = SupportedLanguages.allLanguages[0]
+    @State private var showAlert = false
 
     var body: some View {
         Form {
-            Section {
-                VStack {
-                    TextField(
-                        "Deck Name",
-                        text: $newDeckName
-                    )
-                    Picker("Language", selection: $newDeckLanguage) {
-                        Text("Language").tag(nil as String?)
-                        ForEach(languages, id: \.self) { item in
-                            Text(item)
-                        }
-                    }
-                    .pickerStyle(.menu)
+            DeckDetailsSection(newDeckName: $newDeckName, newDeckLanguage: $newDeckLanguage)
+            CreateDeckButtonSection(showPopup: $showPopup, newDeckName: newDeckName, newDeckLanguage: newDeckLanguage, showAlert: $showAlert)
+        }
+        .navigationBarItems(leading: Button(action: {
+            showPopup = false
+        } ) {
+            Image(systemName: "chevron.backward")
+            Text("Back")
+        } )
+        .navigationTitle("Create Deck")
+        .navigationBarTitleDisplayMode(.inline)
+        .alert(isPresented: $showAlert) {
+            Alert(title: Text("Error"), message: Text("Deck name cannot be empty"), dismissButton: .default(Text("OK")))
+        }
+    }
+}
+
+struct DeckDetailsSection: View {
+    @Binding var newDeckName: String
+    @Binding var newDeckLanguage: String
+
+    var body: some View {
+        Section() {
+            TextField("Deck Name", text: $newDeckName)
+            Picker("Language", selection: $newDeckLanguage) {
+                ForEach(SupportedLanguages.allLanguages, id: \.self) { language in
+                    Text(language).tag(language)
                 }
             }
-            
-            Section {
-                GeometryReader { geometry in
-                    HStack {
-                        Spacer()
-                        Button("Create Deck") {
+        }
+    }
+}       
+
+struct CreateDeckButtonSection: View {
+    @EnvironmentObject var deckService: DeckService
+    @Binding var showPopup: Bool
+    let newDeckName: String
+    let newDeckLanguage: String
+    @Binding var showAlert: Bool
+
+    var body: some View {
+        Section {
+            GeometryReader { geometry in
+                HStack {
+                    Spacer()
+                    Button("Create Deck") {
+                        if newDeckName.isEmpty {
+                            showAlert = true
+                        } else {
                             print("Create Deck")
                             showPopup = false
                             Task {
@@ -49,21 +68,12 @@ struct CreateDeckView: View {
                                 )
                             }
                         }
-                        .frame(maxWidth: geometry.size.width / 2, maxHeight: .infinity)
-                        Spacer()
                     }
+                    .frame(maxWidth: geometry.size.width / 2, maxHeight: .infinity)
+                    Spacer()
                 }
             }
         }
-        .navigationBarItems(leading: Button(action: {
-            showPopup = false
-        } ) {
-            Image(systemName: "chevron.backward")
-            Text("Back")
-        } )
-        .navigationTitle("Create Deck")
-        .navigationBarTitleDisplayMode(.inline)
-
     }
 }
 

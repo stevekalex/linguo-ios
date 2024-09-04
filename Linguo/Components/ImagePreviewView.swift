@@ -28,7 +28,6 @@ struct ImagePreviewView: View {
         } catch {
             print("ERROR CREATING FLASHCARD")
         }
-        
     }
     
     var body: some View {
