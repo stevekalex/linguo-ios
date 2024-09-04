@@ -34,12 +34,10 @@ struct DeckDetailView: View {
                 .frame(width: UIScreen.main.bounds.width - 75)
                 .padding(.top, 10)
                 .padding([.leading, .trailing], 8)
-                
             }
         
-                        
             HStack {
-                NavigationLink(destination: CreateFlashcardView(deckId: deck.id))
+                NavigationLink(destination: CreateFlashcardView(deckId: deck.id, language: deck.language))
                 {
                     Text("Create ➕")
                         .font(Fonts.main(18))

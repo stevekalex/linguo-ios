@@ -8,9 +8,8 @@ public struct Fonts {
     static let header: (CGFloat) -> Font = { size in
         return Font.custom("Avenir Next Bold", size: size)
     }
-
-    
 }
+
 public struct SupportedLanguages {
     static let allLanguages = [
         "Afrikaans",

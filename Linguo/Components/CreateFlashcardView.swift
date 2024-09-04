@@ -16,6 +16,7 @@ extension View {
 
 struct CreateFlashcardView: View {
     @State var deckId: String
+    @State var language: String
     @State var prompt: String = ""
     @State var promptIsFocused: Bool = false
     @State var image: UIImage? = nil
@@ -50,12 +51,12 @@ struct CreateFlashcardView: View {
                     if answerIsFocused && !promptIsFocused {
                         if image != nil && answer.isEmpty {
                             Spacer()
-                            ClassifyImageButton(image: $image, answer: $answer)
+                            ClassifyImageButton(image: $image, answer: $answer, language: $language)
                         }
                         
                         if !prompt.isEmpty && answer.isEmpty {
                             Spacer()
-                            TranslateTextButton(prompt: $prompt, answer: $answer)
+                            TranslateTextButton(prompt: $prompt, answer: $answer, language: $language)
                         }
                     }
                 }
@@ -105,14 +106,14 @@ struct FrontView: View {
                     .clipped()
                     .overlay(
                         RoundedRectangle(cornerRadius: 10)
-                            .stroke(Color.white, lineWidth: 3)
+                            .stroke(Color.white, lineWidth: 2)
                     )
             } else {
                 TextEditor(text: $prompt)
-                    .padding(15)
+                    .padding(20)
                     .overlay(
                         RoundedRectangle(cornerRadius: 10)
-                            .stroke(Color.white, lineWidth: 3)
+                            .stroke(Color.white, lineWidth: 2)
                     )
                     .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
                     .frame(width: UIScreen.main.bounds.width - 75, height: 125)
@@ -145,10 +146,10 @@ struct BackView: View {
                 .padding(.trailing, 200)
             
             TextEditor(text: $answer)
-                .padding(15)
+                .padding(20)
                 .overlay(
                     RoundedRectangle(cornerRadius: 10)
-                        .stroke(Color.white, lineWidth: 3)
+                        .stroke(Color.white, lineWidth: 2)
                 )
                 .frame(width: UIScreen.main.bounds.width - 75, height: 125)
                 .lineLimit(6, reservesSpace: true)
@@ -184,12 +185,13 @@ struct CameraButton: View {
 struct ClassifyImageButton: View {
     @Binding var image: UIImage?
     @Binding var answer: String
+    @Binding var language: String
     
     var body: some View {
         Button(action: {
             Task {
                 if let image = image {
-                    let imageLabel = await classifyAndTranslateImage(image: image, language: "Spanish")
+                    let imageLabel = await classifyAndTranslateImage(image: image, language: language)
                     answer = imageLabel
                 }
             }
@@ -205,11 +207,12 @@ struct ClassifyImageButton: View {
 struct TranslateTextButton: View {
     @Binding var prompt: String
     @Binding var answer: String
+    @Binding var language: String
     
     var body: some View {
         Button(action: {
             Task {
-                let translatedText = await translateText(text: prompt, language: "Spanish")
+                let translatedText = await translateText(text: prompt, language: language)
                 answer = translatedText
             }
         }, label: {
@@ -256,6 +259,6 @@ struct SaveButton: View {
 
 struct CreateFlashcardView_Previews: PreviewProvider {
     static var previews: some View {
-        CreateFlashcardView(deckId: "deck_id")
+        CreateFlashcardView(deckId: "deck_id", language: "Malayalam")
     }
 }

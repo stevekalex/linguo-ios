@@ -24,11 +24,9 @@ func classifyAndTranslateImage(image: UIImage, language: String) async -> String
         Translate your label into \(language)
     
         Return in the following format:
-        Original
-        "This is the labelled text"
+        "This is where the translated text in \(language) goes"
     
-        Translation
-        "This is the translated text"
+        "This is where the labelled text goes"
     """
     let base64ImageUrl = getBase64ImageUrl(image: image)
     let response = try await fetchOpenAIImageClassificationResponse(image: base64ImageUrl, prompt: prompt)
@@ -50,7 +48,7 @@ func fetchOpenAIImageClassificationResponse(image: String?, prompt: String) asyn
     var request = URLRequest(url: url)
     request.httpMethod = "POST"
     request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-    // request.setValue("Bearer", forHTTPHeaderField: "Authorization")
+    request.setValue("Bearer", forHTTPHeaderField: "Authorization")
     request.httpBody = imageClassificationRequestBody
 
     do {

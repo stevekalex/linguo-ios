@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5F2F62412C8328670075498E /* GPT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2F62402C8328670075498E /* GPT.swift */; };
+		5F33A7112C88458F00588A82 /* SpacedRepetition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F33A7102C88458F00588A82 /* SpacedRepetition.swift */; };
 		5F7183802C6DE5C000D67A5D /* DeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F71837F2C6DE5C000D67A5D /* DeckView.swift */; };
 		5F7183822C6E12DD00D67A5D /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7183812C6E12DD00D67A5D /* Deck.swift */; };
 		5F7183852C6E23BF00D67A5D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7183842C6E23BF00D67A5D /* Extensions.swift */; };
@@ -64,6 +65,7 @@
 
 /* Begin PBXFileReference section */
 		5F2F62402C8328670075498E /* GPT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPT.swift; sourceTree = "<group>"; };
+		5F33A7102C88458F00588A82 /* SpacedRepetition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacedRepetition.swift; sourceTree = "<group>"; };
 		5F71837F2C6DE5C000D67A5D /* DeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckView.swift; sourceTree = "<group>"; };
 		5F7183812C6E12DD00D67A5D /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 		5F7183842C6E23BF00D67A5D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				5F7246B92C84805F00671A7F /* Constants.swift */,
 				5F7183842C6E23BF00D67A5D /* Extensions.swift */,
 				5F2F62402C8328670075498E /* GPT.swift */,
+				5F33A7102C88458F00588A82 /* SpacedRepetition.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -453,6 +456,7 @@
 				5FCEDB252C6A6345004721E8 /* ContentView.swift in Sources */,
 				5F2F62412C8328670075498E /* GPT.swift in Sources */,
 				5FCEDB232C6A6345004721E8 /* LinguoApp.swift in Sources */,
+				5F33A7112C88458F00588A82 /* SpacedRepetition.swift in Sources */,
 				5FCEDBA62C6BAB73004721E8 /* User.swift in Sources */,
 				5FF81D3A2C74811900681DC2 /* FlashcardModel.swift in Sources */,
 				5F7183802C6DE5C000D67A5D /* DeckView.swift in Sources */,
